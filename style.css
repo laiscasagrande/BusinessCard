@@ -38,10 +38,12 @@ body * {
 }
 #container {
   /*seletor de id*/
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /* border: 1px solid red; é bom colocar para ver o que está acontecendo*/
   margin: 56px auto 0px; /*cima, laterais e baixo*/
   /* para centralizar uma caixa, é preciso colocar margin: auto, pois vai dar margem automático em todos os lados; menos em cima e embaixo, pois só aplica-se nas laterais*/
+  padding: 0 24px;
 }
 #profile {
   text-align: center; /*como a tag img é somente inline, eu tenho que colocar o pai dela como center para a imagem ficar no centro*/
@@ -123,6 +125,10 @@ footer {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-back 0.2s; /*como a função do forwards é manter as propriedades finais, eu não preciso pôr aqui também, pois, para voltar, já é as propriedades finais*/
+}
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 #switch span {
   display: block;
@@ -135,6 +141,35 @@ footer {
   border-radius: 9999px;
 }
 .light #switch button {
-  right: 0;
-  left: initial;
+  /* right: 0;
+  left: initial;*/
+  animation: slide-in 0.4s forwards; /*a animação só vai acontecer quando estiver no light, por isso que tenho que colocar essa propriedade*/ /*o forwards diz que, depois que o left for de 0 para 50% em 0.4s, ele terá que acabar e manter as propriedades*/
+}
+@media (min-width: 700px) {
+  /*de 700 px para cima, vc vai fazer o que eu mandar aqui*/
+  :root {
+    --bg-url: url(./assets/pexels-samara-hammer-11737041.jpg);
+  }
+  .light {
+    --bg-url: url(./assets/pexels-dương-nhân-2579916.jpg);
+  }
+}
+/*ir*/
+@keyframes slide-in {
+  /*animações*/
+  from {
+    left: 0; /*vai mover o elemento de 0 para 50%*/
+  } /*onde vai começar*/
+  to {
+    left: 50%;
+  } /*onde vai terminar*/
+}
+/*voltar*/
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
