@@ -1,0 +1,139 @@
+* {
+  margin: 0; /*todos os elementos não vão ter mais as margins e os paddings que o navegador colocar*/
+  padding: 0;
+  box-sizing: border-box; /*vai pegar as medidas da borda, que é o padding do container*/
+}
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/pexels-samara-hammer-11737041.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.1);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --hightlight-color: rgba(0, 0, 0, 0.4);
+  --switch-bg-url: url(assets/moon.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/pexels-dương-nhân-2579916.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.9);
+  --surface-color: rgba(0, 0, 0, 0.9);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(assets/sun.svg);
+}
+body {
+  /*
+  background-image: url(./assets/unnamed\ \(1\).png); /* url é uma função que localiza
+background-repeat: no-repeat;
+background-position: top center;
+background-size: cover;
+*/
+  /*background: color image repeat position/size */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+body * {
+  /* o * é um seletor universal, significa que irá aplicar para todos os elementos dentro de body*/
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+}
+#container {
+  /*seletor de id*/
+  width: 360px;
+  /* border: 1px solid red; é bom colocar para ver o que está acontecendo*/
+  margin: 56px auto 0px; /*cima, laterais e baixo*/
+  /* para centralizar uma caixa, é preciso colocar margin: auto, pois vai dar margem automático em todos os lados; menos em cima e embaixo, pois só aplica-se nas laterais*/
+}
+#profile {
+  text-align: center; /*como a tag img é somente inline, eu tenho que colocar o pai dela como center para a imagem ficar no centro*/
+}
+#profile img {
+  /*profile é o pai e a img é a filha*/
+  width: 150px;
+}
+#profile p {
+  font-weight: 500; /* peso; fica mais negrito que o 400*/
+  font-size: 16px; /* tamanho da fonte, mas, neste caso, não precisa colocar porque por padrão já vem com 16 px*/
+  line-height: 24px; /*altura de linha*/
+}
+#titulo {
+  text-align: center;
+}
+ul {
+  list-style: none;
+  display: flex; /*esse display permite manipular outros elementos filhos.*/
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0px;
+}
+ul li a {
+  display: flex;
+  border: 2px solid red;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--strooke-color);
+  backdrop-filter: blur(4px);
+  font-weight: 500;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+#social-links {
+  display: flex;
+  gap: 18px;
+  justify-content: center; /*funciona com o display flex*/
+  padding: 5px 0px;
+  font-size: 28px;
+}
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px; /*existe 16px entre cada um deles*/
+  transition: background 0.5s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--hightlight-color);
+}
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 19px;
+}
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+  padding: 20px 0;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+.light #switch button {
+  right: 0;
+  left: initial;
+}

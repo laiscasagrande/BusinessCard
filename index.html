@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!--configurações da página, parte não visível-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--o viewport é a área da página, a parte "branca", que tem largura, escala, zoom de 1(permite a adaptação em celular, desktop)-->
+    <title>Projeto</title>
+  </head>
+  <body>
+    <!--parte visível-->
+    <link rel="stylesheet" href="style.css" />
+    <!-- com o rel, eu aviso que o tipo de referência que eu vou colocar  é estilo, enquanto o atributo href indica onde está esse arquivo css-->
+    <h1 id="titulo">Projeto</h1>
+    <div id="container">
+      <div id="profile">
+        <img
+          src="./assets/lalala.png"
+          alt="Foto de Laís fotografada no espelho"
+        />
+        <p>@laiskaminski</p>
+      </div>
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+      <ul>
+        <!--ul é uma lista não ordenada-->
+        <li>
+          <!--li é um item da lista-->
+          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+          <!--o target abre outra guia-->
+          <!--Na ferramenta do desenvolvedor, inspecionar, se eu filtrar por display, aparecerá flex, qu que foi o que eu coloquei. No entanto, se eu tiraro flex, aparecerá inline, que é padrão dele-->
+        </li>
+        <li>
+          <a href="#">Linkedln</a>
+        </li>
+        <li>
+          <a href="#">Wattpad</a>
+        </li>
+      </ul>
+      <div id="social-links">
+        <a href="#" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://www.instagram.com/laiskaminski/" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+      <footer>
+        <!--para rodapés-->
+        Projeto realizado pela estagiária
+        <a href="https://www.instagram.com/laiskaminski/"
+          >Laís Kaminski Casagrande</a
+        >
+      </footer>
+    </div>
+    <!--como o atributo id é único, eu só posso usar essa estilização somente nessa div-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
