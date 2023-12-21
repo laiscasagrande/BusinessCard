@@ -102,11 +102,6 @@ ul li a:hover {
 #social-links a:hover {
   background: var(--hightlight-color);
 }
-footer {
-  padding: 20px 0;
-  text-align: center;
-  font-size: 19px;
-}
 #switch {
   position: relative;
   width: 64px;
@@ -172,4 +167,9 @@ footer {
   to {
     left: 0;
   }
+}
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 19px;
 }
