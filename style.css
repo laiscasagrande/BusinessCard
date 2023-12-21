@@ -29,6 +29,7 @@ background-size: cover;
 */
   /*background: color image repeat position/size */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100%;
 }
 body * {
   /* o * é um seletor universal, significa que irá aplicar para todos os elementos dentro de body*/
